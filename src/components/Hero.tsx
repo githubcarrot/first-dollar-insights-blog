@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { TrendingUp, Award, Users, DollarSign } from "lucide-react";
 import heroImage from "@/assets/hero-finance-teens.jpg";
@@ -24,12 +25,16 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="lg" className="text-lg px-8">
-                Start Your Journey
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8">
-                Read My Story
-              </Button>
+              <Link to="/getting-started">
+                <Button variant="hero" size="lg" className="text-lg px-8">
+                  Start Your Journey
+                </Button>
+              </Link>
+              <Link to="/story">
+                <Button variant="outline" size="lg" className="text-lg px-8">
+                  Read My Story
+                </Button>
+              </Link>
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

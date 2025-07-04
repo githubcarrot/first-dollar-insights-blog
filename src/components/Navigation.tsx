@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
@@ -11,23 +12,25 @@ const Navigation = () => {
         </div>
         
         <div className="hidden md:flex items-center space-x-8">
-          <a href="#home" className="text-foreground hover:text-primary transition-colors">
+          <Link to="/" className="text-foreground hover:text-primary transition-colors">
             Home
-          </a>
-          <a href="#about" className="text-foreground hover:text-primary transition-colors">
+          </Link>
+          <Link to="/story" className="text-foreground hover:text-primary transition-colors">
             About
-          </a>
-          <a href="#blog" className="text-foreground hover:text-primary transition-colors">
+          </Link>
+          <Link to="/blog" className="text-foreground hover:text-primary transition-colors">
             Blog
-          </a>
-          <a href="#resources" className="text-foreground hover:text-primary transition-colors">
+          </Link>
+          <Link to="/getting-started" className="text-foreground hover:text-primary transition-colors">
             Resources
-          </a>
+          </Link>
         </div>
         
-        <Button variant="hero" size="sm">
-          Start Learning
-        </Button>
+        <Link to="/getting-started">
+          <Button variant="hero" size="sm">
+            Start Learning
+          </Button>
+        </Link>
       </div>
     </nav>
   );

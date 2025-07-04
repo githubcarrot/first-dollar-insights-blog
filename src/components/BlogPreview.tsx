@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Clock, ArrowRight, BookOpen, Lightbulb, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const BlogPreview = () => {
   const posts = [
@@ -72,9 +73,11 @@ const BlogPreview = () => {
         </div>
         
         <div className="text-center">
-          <Button variant="finance" size="lg">
-            View All Posts
-          </Button>
+          <Link to="/blog">
+            <Button variant="finance" size="lg">
+              View All Posts
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

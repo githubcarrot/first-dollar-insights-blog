@@ -1,8 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Mail, MessageCircle, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 
 const CallToAction = () => {
+  const { toast } = useToast();
+
+  const handleNewsletterSignup = () => {
+    toast({
+      title: "Newsletter Signup",
+      description: "Thanks for your interest! Newsletter signup will be available soon.",
+    });
+  };
+
+  const handleDiscordJoin = () => {
+    // You can replace this with your actual Discord invite link
+    window.open("https://discord.gg/your-server", "_blank");
+  };
   return (
     <section className="py-20 bg-primary">
       <div className="container mx-auto px-4">
@@ -22,7 +37,7 @@ const CallToAction = () => {
               <p className="text-muted-foreground text-sm mb-4">
                 Get my latest insights, market updates, and teen-focused finance tips.
               </p>
-              <Button variant="finance" className="w-full">
+              <Button variant="finance" className="w-full" onClick={handleNewsletterSignup}>
                 Subscribe Now
               </Button>
             </Card>
@@ -33,17 +48,19 @@ const CallToAction = () => {
               <p className="text-muted-foreground text-sm mb-4">
                 Connect with other teen investors and share your journey.
               </p>
-              <Button variant="outline" className="w-full">
+              <Button variant="outline" className="w-full" onClick={handleDiscordJoin}>
                 Join Discord
               </Button>
             </Card>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="secondary" size="lg" className="text-lg px-8">
-              Start Reading
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <Link to="/blog">
+              <Button variant="secondary" size="lg" className="text-lg px-8">
+                Start Reading
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
             <p className="text-primary-foreground/60 text-sm">
               No spam, unsubscribe anytime
             </p>
